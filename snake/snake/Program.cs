@@ -20,6 +20,12 @@ namespace snake
             pList.Add(p1);
             pList.Add(p2);
 
+            HorizontalLine hLine = new HorizontalLine(7, 12, 6, '+');
+            hLine.Draw();
+
+            VerticalLine vLine = new VerticalLine(10, 3, 10, '-');
+            vLine.Draw();
+
             Console.ReadKey();
         }
 
