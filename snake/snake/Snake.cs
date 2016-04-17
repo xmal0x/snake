@@ -18,7 +18,7 @@ namespace snake
             for (int i = 0; i <= Lenght; i++)
             {
                 Point p = new Point(tail);
-                p.Move(i, _direction);
+                p.Move(i, direction);
                 pList.Add(p);
             }
         }
@@ -40,6 +40,14 @@ namespace snake
             Point nextPoint = new Point(head);
             nextPoint.Move(1, direction);
             return nextPoint;
+        }
+
+        internal void HandleKey(ConsoleKey key)
+        {
+            if (key == ConsoleKey.UpArrow) direction = Direction.TOP;
+            else if (key == ConsoleKey.DownArrow) direction = Direction.DOWN;
+            else if (key == ConsoleKey.LeftArrow) direction = Direction.LEFT;
+            else if (key == ConsoleKey.RightArrow) direction = Direction.RIGHT;
         }
     }
 }
